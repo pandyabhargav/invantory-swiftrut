@@ -14,8 +14,7 @@ const PORT = process.env.PORT || 5000;
 const _diname = path.resolve();
 
 app.use(cors({
-  origin: ["http://localhost:5173","https://invantory-swiftrut.onrender.com"],
-  methods: ["POST", "GET"],
+  origin: ["https://invantory-swiftrut.onrender.com","http://localhost:5173"],
   credentials: true,
 }));
 
