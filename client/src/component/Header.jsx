@@ -26,7 +26,6 @@ function Header({ onSearch }) {
           <img
             src="https://randomuser.me/api/portraits/men/1.jpg"
             alt="Profile"
-            onClick={toggleDropdown}
             className="rounded-full user-img cursor-pointer hover:shadow-lg transition-shadow duration-200"
           />
         </div>
