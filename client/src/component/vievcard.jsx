@@ -47,7 +47,7 @@ const InventoryManagement = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await fetch('http://localhost:5000/inventory');
+      const response = await fetch('https://invantory-swiftrut.onrender.com/inventory');
       if (!response.ok) throw new Error('Failed to fetch items');
       const data = await response.json();
       setItems(data);
@@ -60,7 +60,7 @@ const InventoryManagement = () => {
     console.log('Editing item:', item);
     const updatedItem = { ...item, quantity: parseInt(item.quantity, 10) + 1 };
     try {
-      const response = await fetch(`http://localhost:5000/inventory/${item._id}`, { 
+      const response = await fetch(`https://invantory-swiftrut.onrender.com/inventory/${item._id}`, { 
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const InventoryManagement = () => {
     console.log('Deleting item:', item);
     if (window.confirm(`Are you sure you want to delete ${item.itemName}?`)) {
       try {
-        const response = await fetch(`http://localhost:5000/inventory/${item._id}`, { 
+        const response = await fetch(`https://invantory-swiftrut.onrender.com/inventory/${item._id}`, { 
           method: 'DELETE',
         });
 
@@ -143,7 +143,7 @@ const handleImport = (event) => {
     for (const newItem of newItems) {
       console.log('New Item:', newItem); 
       try {
-        await fetch('http://localhost:5000/inventory', {
+        await fetch('https://invantory-swiftrut.onrender.com/inventory', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ function InventoryForm() {
   useEffect(() => {
     const fetchSuppliers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/suppliers');
+        const response = await fetch('https://invantory-swiftrut.onrender.com/suppliers');
         if (!response.ok) throw new Error('Failed to fetch suppliers');
         const data = await response.json();
         setSuppliers(data);
@@ -39,7 +39,7 @@ function InventoryForm() {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:5000/inventory', {
+        const response = await fetch('https://invantory-swiftrut.onrender.com/inventory', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

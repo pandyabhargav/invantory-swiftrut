@@ -15,7 +15,7 @@ function InventoryEditPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/inventory/${id}`);
+        const response = await fetch(`https://invantory-swiftrut.onrender.com/inventory/${id}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -52,7 +52,7 @@ function InventoryEditPage() {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch(`http://localhost:5000/inventory/${id}`, {
+        const response = await fetch(`https://invantory-swiftrut.onrender.com/inventory/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
